@@ -50,7 +50,7 @@ $$
 The `spec-gen` input parameter for Gaussian broadening is $\sigma$, the usual standard deviation represented by the Gaussian. The full width of the peak at half peak height (FWHH) is $2\sigma \sqrt{\ln 4}$ or approximately $2.3548\sigma$. With Lorentzian broadening, the normalized function used is 
 
 $$
-L = \frac{\gamma}{2π [(x-a)^2 + (γ/2)^2]}
+L = \frac{\gamma/2}{π [(x-a)^2 + (γ/2)^2]}
 $$
 
 with a FWHH of $\gamma$. The `spec-gen` input parameter for Lorentzian broadening is equal to $\gamma$.
