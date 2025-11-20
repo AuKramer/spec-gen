@@ -47,12 +47,12 @@ $$
 G = \frac{1}{\sigma \sqrt{2\pi}} \exp \left [ \frac{-(x-a)^2}{2 \sigma^2} \right ]
 $$
 
-The `spec-gen` input parameter for Gaussian broadening is $\sigma$, the usual standard deviation represented by the Gaussian. The full width of the peak at half peak height (FWHH) is $2\sigma \sqrt{\ln 4}$ or approximately $2.3548\sigma$. With Lorentzian broadening, the normalized function used is 
+The `spec-gen.py` input parameter for Gaussian broadening is $\sigma$, the usual standard deviation represented by the Gaussian. The peak's full width at half maximum (FWHM) is $2\sigma \sqrt{\ln 4}$ or approximately 2.3548$\sigma$. Conversely, if you need broadening with a given FWHM, the corresponding input is $\sigma$ = FWHM/2.3548. With Lorentzian broadening, the normalized function used is 
 
 $$
-L = \frac{\gamma/2}{π [(x-a)^2 + (γ/2)^2]}
+L = \frac{\gamma/2}{π} ~ \frac{1}{(x-a)^2 + (γ/2)^2}
 $$
 
-with a FWHH of $\gamma$. The `spec-gen` input parameter for Lorentzian broadening is equal to $\gamma$.
+with a FWHM of $\gamma$. The `spec-gen.py` input parameter for Lorentzian broadening is equal to $\gamma$.
 
 Spectra are padded beyond the lowest and highest transition energy. The default padding is 5 times the chosen broadening (its absolute value, rather). You can change the default with the `--padding` option. If the broadening is given as a negative number, to trigger the empirical broadening formula described above, the absolute value is used to generate the padding. 
