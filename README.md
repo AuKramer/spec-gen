@@ -47,7 +47,7 @@ $$
 G = \frac{1}{\sigma \sqrt{2\pi}} \exp \left [ \frac{-(x-a)^2}{2 \sigma^2} \right ]
 $$
 
-The `spec-gen.py` input parameter for Gaussian broadening is $\sigma$, the usual standard deviation represented by the Gaussian. The peak's full width at half maximum (FWHM) is $2\sigma \sqrt{\ln 4}$ or approximately 2.3548$\sigma$. Conversely, if you need broadening with a given FWHM, the corresponding input is $\sigma$ = FWHM/2.3548. With Lorentzian broadening, the normalized function used is 
+The `spec-gen.py` input parameter for Gaussian broadening is $\sigma$, the usual standard deviation represented by the Gaussian. The peak's full width at half maximum (FWHM) is $2\sigma \sqrt{\ln 4}$ or approximately 2.3548 $\sigma$. Conversely, if you need broadening with a given FWHM, the corresponding input is $\sigma$ = FWHM/2.3548. With Lorentzian broadening, the normalized function used is 
 
 $$
 L = \frac{\gamma/2}{π} ~ \frac{1}{(x-a)^2 + (γ/2)^2}
