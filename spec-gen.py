@@ -201,7 +201,7 @@ try:
                     imp_val += for_int
                     integral += for_int / energies[j]
                 print(('{} {}'.format(i, imp_val)))   
-            elif type_spec in ['mcda', 'mcdb']:
+    elif type_spec in ['mcda', 'mcdb']:
         energies = []
         intensities = []
         with open(arguments['--input'], 'r') as f:
@@ -224,10 +224,11 @@ try:
         for omega in arange(energy_range[0], energy_range[1] + delta_e, delta_e):
             val = 0.0
             prefactor = (pi / (4500*log(10) )) * 10000 * 0.001480279
+            H2eV = 27.211386245981 # This is the newest NIST value for the Hartree to eV conversion
             for e, inten in zip(energies, intensities):
                 if arguments['--gaussian']:
-                    if type_spec == 'mcda':
-                        val += (inten * prefactor)* omega * gauss_derivative(broaden, omega, e)
+                    if type_spec == 'mcda': #Prefactor assumes au, adjusted by H2eV to account for derivative E dependence
+                        val += (inten * -prefactor*H2eV)* omega * gauss_derivative(broaden, omega, e)
                     else:
                         val += (inten * prefactor)* omega * gauss(broaden, omega, e)
                 else:
